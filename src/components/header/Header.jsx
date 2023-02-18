@@ -1,20 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
-import { authActionTpyesv } from "../../store/auth/Auth";
+import { authAction,  } from "../../store/auth/authSlice";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 const Header = () => {
   const dispatch = useDispatch();
-  const isAuthrized = useSelector((state) => state.authRudecer.isAuthrized);
+  const isAuthrized = useSelector((state) => state.auth.isAuthrized);
   return (
     <StyledHeader>
-      <h1> Todo List Redux </h1>
+      <h1> Todo List Redux-Toolkit </h1>
       {isAuthrized && (
         <nav>
           <ul>
             <li>
               <Link to={"/"}>
                 <button
-                  onClick={() => dispatch({ type: authActionTpyesv.LOG_OUT })}
+                  onClick={() => dispatch(authAction.getLogIn())}
                 >
                   Logout
                 </button>
@@ -33,7 +33,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3c0080;
+  background-color:orange;
   color: white;
   padding: 0 10%;
 
@@ -49,10 +49,6 @@ const StyledHeader = styled.header`
     }
   }
 
-  /* .header a:hover,
-.header a:active {
-  color: #b864da;
-} */
 
   button {
     font-size: 1.25rem;
@@ -60,7 +56,7 @@ const StyledHeader = styled.header`
     border: 1px solid #ffbb00;
     padding: 0.5rem 1.5rem;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    color: #2c2922;
+    color:white;
   }
 
   &button:hover,

@@ -1,21 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import {
-  changeEditingTodoId,
-  changeInputValue,
-  completedPosts,
-  deleteTodo,
-  editStatus,
-} from "../../store/action";
+import { changeEditingTodoId, changeInputValue, completedPosts, deleteTodo } from "../../store/action";
 const TodoItem = ({ id, title, completed }) => {
   const dispatch = useDispatch();
 
   const editHandler = () => {
-    dispatch(editStatus(true));
     dispatch(changeInputValue(title));
     dispatch(changeEditingTodoId(id));
-    dispatch(deleteTodo(id))
+    dispatch(deleteTodo(id));
   };
   return (
     <ContainerList>
@@ -27,10 +20,15 @@ const TodoItem = ({ id, title, completed }) => {
         {title}
       </span>
       <StyledContainer>
-        <input type="checkbox" onChange={() => dispatch(completedPosts(id))} />
-        <button onClick={editHandler}> Update</button>
+        <input
+          type="checkbox"
+          onChange={() => dispatch(completedPosts(id))}
+        />
+        <button onClick={editHandler}>Update</button>
 
-        <button onClick={() => dispatch(deleteTodo(id))}>Delete</button>
+        <button onClick={() => dispatch(deleteTodo(id))}>
+          Delete
+        </button>
       </StyledContainer>
     </ContainerList>
   );

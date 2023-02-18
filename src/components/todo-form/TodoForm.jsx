@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, changeInputValue } from "../../store/action";
 import styled from "styled-components";
 import TodoList from "../todo-list/TodoList";
+import { addTodo, changeInputValue } from "../../store/action";
 const TodoForm = () => {
   const dispatch = useDispatch();
-  const inputValue = useSelector((state) => state.todoReducers.inputValue);
+  const { inputValue } = useSelector((state) => state.todo);
 
-  const disabled = inputValue.trim().length > 0
+  const disabled = inputValue.trim().length > 0;
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -21,42 +21,39 @@ const TodoForm = () => {
 
   return (
     <>
-    <ContainerForm>
-      <StyledDiv>
-      <h1>Todo List</h1>
-      <input
-        type="text"
-        onChange={(e) => dispatch(changeInputValue(e.target.value))}
-        value={inputValue}
-      />
-    
-        <button disabled={!disabled} onClick={onSubmitHandler}>+</button>
+      <ContainerForm>
+        <StyledDiv>
+          <h1>Todo List</h1>
+          <input
+            type="text"
+            onChange={(e) => dispatch(changeInputValue(e.target.value))}
+            value={inputValue}
+          />
 
-      </StyledDiv>
-     
-      
-    </ContainerForm>
+          <button disabled={!disabled} onClick={onSubmitHandler}>
+            Add
+          </button>
+        </StyledDiv>
+      </ContainerForm>
 
-    <TodoList/>
+      <TodoList />
     </>
-
-    
   );
 };
 
 const ContainerForm = styled.div`
   margin: 0 auto;
-  width: 500px;
+  width: 600px;
 
   input {
-    width: 400px;
+    width: 500px;
     height: 30px;
     padding: 10px 10px;
   }
 
   button {
-    width: 70px;
-    padding: 5px 5px;
+    width: 90px;
+    padding: 7px 7px;
     margin-left: 5px;
     background-color: orange;
     border: none;
@@ -66,12 +63,13 @@ const ContainerForm = styled.div`
 
   h1 {
     text-align: center;
-    color: white
+    color: white;
+    font-size: 3rem;
   }
 `;
 
-const StyledDiv =styled.div`
+const StyledDiv = styled.div`
   margin-top: 30px;
-`
+`;
 
 export default TodoForm;

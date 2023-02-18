@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Auth from "../auth/Auth";
 import TodoForm from "../todo-form/TodoForm";
 
-const MainTodo = () => {
+const MainLayout = () => {
   return (
     <div>
       <Routes>
@@ -15,4 +15,4 @@ const MainTodo = () => {
   );
 };
 
-export default MainTodo;
+export default MainLayout;

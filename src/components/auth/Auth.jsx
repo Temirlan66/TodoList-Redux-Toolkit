@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { authActionTpyesv } from "../../store/auth/Auth";
+import { authAction } from "../../store/auth/authSlice";
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -25,10 +25,7 @@ const Auth = () => {
     ) {
       navigate("/todos");
 
-      dispatch({
-        type: authActionTpyesv.LOG_IN,
-        payload: formState.email,
-      });
+      dispatch(authAction.getLogIn());
     }
   };
   return (
@@ -67,33 +64,31 @@ const StyledMain = styled.main`
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
-  background-color: #f4f0fa;
+  background-color:orange;
 
+  label {
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
 
- label {
-  display: block;
-  color: #616161;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
+  input {
+    display: block;
+    width: 20rem;
+    margin: auto;
+    border-radius: 4px;
+    padding: 0.25rem;
+    border: 1px solid #ccc;
+  }
 
- input {
-  display: block;
-  width: 20rem;
-  margin: auto;
-  border-radius: 4px;
-  padding: 0.25rem;
-  border: 1px solid #ccc;
-}
-
-button{
+  button {
     width: 100px;
     height: 30px;
-    background-color: #3a3ac7;
-    color: white;
+    background-color:white;
+    color: orange;
     margin-top: 20px;
     border: none;
-}
-
-`
+  }
+`;
 export default Auth;
