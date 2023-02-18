@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Temirlan66/TodoList-Redux-Toolkit/static/css/main.09671830.css",
-    "main.js": "/Temirlan66/TodoList-Redux-Toolkit/static/js/main.07060f58.js",
-    "index.html": "/Temirlan66/TodoList-Redux-Toolkit/index.html",
-    "main.09671830.css.map": "/Temirlan66/TodoList-Redux-Toolkit/static/css/main.09671830.css.map",
-    "main.07060f58.js.map": "/Temirlan66/TodoList-Redux-Toolkit/static/js/main.07060f58.js.map"
+    "main.css": "/TodoList-Redux-Toolkit/static/css/main.09671830.css",
+    "main.js": "/TodoList-Redux-Toolkit/static/js/main.02437d5b.js",
+    "index.html": "/TodoList-Redux-Toolkit/index.html",
+    "main.09671830.css.map": "/TodoList-Redux-Toolkit/static/css/main.09671830.css.map",
+    "main.02437d5b.js.map": "/TodoList-Redux-Toolkit/static/js/main.02437d5b.js.map"
   },
   "entrypoints": [
     "static/css/main.09671830.css",
-    "static/js/main.07060f58.js"
+    "static/js/main.02437d5b.js"
   ]
 }
